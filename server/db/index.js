@@ -12,10 +12,10 @@ var connection = mysql.createConnection({
   database : 'chat'
 });
 
-connection.connect(function(err) {
+connection.connect((err) => {
   if (err) {
     console.error('error connecting: ' + err.stack);
-    return;
+    throw err;
   }
   console.log('connected as id ' + connection.threadId);
 });
